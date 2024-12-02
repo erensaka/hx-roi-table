@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HX Tasarruf Hesaplayıcı</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>HX Konveyör Bant İzleme Sistemi Maliyet Hesaplayıcı</h1>
+            <p>HX kullanırken veya kullanmadan yapılan harcamalarınızı karşılaştırın.</p>
+        </header>
+
+        <section class="inputs">
+            <h2>Değerleri kritik duruşlar için giriniz:</h2>
+            <form id="input-form">
+                <label>Yılda Konveyörün Toplam Duruş Süresi (Saat):
+                    <input type="number" id="stoppage-time" placeholder="örn. 24" required>
+                </label>
+                <label>Duruş Saati Başına Üretim Kar Kaybı (€):
+                    <input type="number" id="profit-loss" placeholder="örn. 10000" required>
+                </label>
+                <label>Bant Uzunluğu (m):
+                    <input type="number" id="belt-length" placeholder="örn. 100" required>
+                </label>
+                <label>Metre Başına Bant Fiyatı (€):
+                    <input type="number" id="belt-price" placeholder="örn. 200" required>
+                </label>
+                <label>Saatlik Onarım Maliyeti (€):
+                    <input type="number" id="repair-cost" placeholder="örn. 50" required>
+                </label>
+                <button type="button" id="calculate-btn">Hesapla</button>
+            </form>
+        </section>
+
+        <section class="results">
+    <h2>Karşılaştırma Tablosu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>HX kullanılmadığında</th>
+                <th>HX kullanıldığında</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Konveyörün Toplam Duruş Süresi (Saat)</td>
+                <td id="stoppage-without"></td>
+                <td id="stoppage-with"></td>
+            </tr>
+            <tr>
+                <td>Üretim Kar Kaybı (€)</td>
+                <td id="profit-without"></td>
+                <td id="profit-with"></td>
+            </tr>
+            <tr>
+                <td>Onarılan Bant Maliyeti (€)</td>
+                <td id="belt-without"></td>
+                <td id="belt-with"></td>
+            </tr>
+            <tr>
+                <td>Onarım İşçilik Maliyeti (€)</td>
+                <td id="repair-without"></td>
+                <td id="repair-with"></td>
+            </tr>
+            <tr>
+                <td><strong>Toplam Harcama (€)</strong></td>
+                <td id="total-without"></td>
+                <td id="total-with"></td>
+            </tr>
+            <tr>
+                <td><strong>HX ile Yapılan Tasarruf Miktarı (€)</strong></td>
+                <td colspan="2" id="savings" style="font-weight: bold; color: green;"></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
